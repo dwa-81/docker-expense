@@ -2,7 +2,7 @@ version: "3"
 networks:
    expense:
 volumes:
-  volume: mysql 
+  mysql: 
 services:
   mysql:
    image: prash6645/mysql:v1
@@ -19,7 +19,7 @@ services:
    image: prash6645/frontend:v1
    container_name: frontend
    ports:
-    80:80
-   depends:
+   - 80:80
+   depends_on:
    - backend
 
